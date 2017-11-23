@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>提示</title>
+</head>
+<body>
+	<div>
+		<?php echo isset($message)? $message : '成功'; ?>
+		页面在<span id='time'>3s</span>跳转，点击<a href="<?=$url?>">此处</a>直接跳转
+	</div>
+</body>
+</html>
+<script>
+	window.onload = function(){
+		var $time= document.querySelector('#time');
+		
+		// $time.innerText = '3s';
+		var time = 3;
+		var t = setInterval(function(){
+			time--;
+			if(time == -1){
+				clearInterval(t);
+				location.href="<?=$url?>";
+			}else{
+				$time.innerText = time+'s';
+			}
+			
+			
+		},1000);
+		
+	}
+</script>
