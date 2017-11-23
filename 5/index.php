@@ -5,7 +5,7 @@
 启动框架
  */
 define('IMOOC',realpath(' /'));
-define('core',IMOOC.'/core');
+define('CORE',IMOOC.'/core');
 define('APP',IMOOC,'/app');
 define('DEBUG',true);
 if(DEBUG){
